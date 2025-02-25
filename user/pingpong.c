@@ -16,8 +16,6 @@ int main(int argc, char *argv[]) {
 
     write(p[1], "pong", 4);
     close(p[1]);
-
-    exit(0);
   } else {
     int id = getpid();
     char buf[4] = {0};
@@ -28,7 +26,7 @@ int main(int argc, char *argv[]) {
     read(p[0], buf, 4);
     close(p[0]);
     printf("%d: received %s\n", id, buf);
-
-    exit(0);
   }
+
+  exit(0);
 }
